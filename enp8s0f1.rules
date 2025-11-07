@@ -1,0 +1,3 @@
+enp8s0f1.rules
+ACTION=="add", SUBSYSTEM=="net", ENV{ID_NET_DRIVER}=="ixgbe",
+ATTR{device/sriov_numvfs}="7"
