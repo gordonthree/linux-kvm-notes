@@ -1,0 +1,3 @@
+video=efifb:off nofb rd.driver.pre=vfio-pci iommu=pt rd.modules-load=vfio-pci iomem=relaxed amd_pstate.shared_mem=1 amd_pstate=passive rd.driver.blacklist=nouveau modprobe.blacklist=nouveau selinux=0 amd_iommu=on pci=realloc,assign-busses
+
+#the pci= line helps with MMIO and SR-IOV issues
