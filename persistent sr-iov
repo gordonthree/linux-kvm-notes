@@ -1,0 +1,5 @@
+sudo nmcli connection add type ethernet con-name PF-SRIOV ifname <PF_INTERFACE_NAME>
+sudo nmcli connection modify PF-SRIOV sriov.total-vfs 4
+# Optionally configure the PF's IPv4/IPv6 settings if needed
+sudo nmcli connection modify PF-SRIOV ipv4.method manual ipv4.address 10.0.0.10/24 
+sudo nmcli connection up PF-SRIOV
