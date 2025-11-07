@@ -1,0 +1,15 @@
+[Unit]
+#  0000\:05\:00.0/net/enp5s0f0np0
+Description=Enable SR-IOV Virtual Functions
+After=network.target network-pre.target
+Wants=network.target
+
+[Service]
+Type=oneshot
+# Ensure the PF is visible in sysfs by waiting for the PF driver to load
+# ExecStartPre=/bin/sh -c 'while [ ! -d /sys/bus/pci/devices/0000\:05\:00.0/net/enp5s0f0np0 ]; do sleep 1; done'
+# The core sysfs command to set the number of VFs
+ExecStart=/bin/sh -c 'echo 4 > /sys/class/net/enp5s0f0np0/device/sriov_numvfs'
+
+[Install]
+WantedBy=multi-user.target
