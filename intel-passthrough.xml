@@ -1,0 +1,7 @@
+<network>
+  <name>intel-passthrough</name>
+  <uuid>f25e492e-bb52-4724-ae2c-2fd7eb99e203</uuid>
+  <forward mode='hostdev' managed='yes'>
+    <pf dev='enp8s0f1'/>
+  </forward>
+</network>
