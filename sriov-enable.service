@@ -1,3 +1,9 @@
+# create this service file, location: /etc/systemd/system/sriov-enable.service
+# edit the pci address and interface name below
+# sudo systemctl daemon-reload
+# sudo systemctl enable sriov-enable.service
+# sudo reboot
+
 [Unit]
 #  0000\:05\:00.0/net/enp5s0f0np0
 Description=Enable SR-IOV Virtual Functions
