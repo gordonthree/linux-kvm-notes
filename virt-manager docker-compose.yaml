@@ -1,0 +1,19 @@
+# docker-compose.yaml
+services:
+  virt-manager:
+    image: mber5/virt-manager:latest
+    container_name: virt-manager
+    restart: unless-stopped
+    ports:
+      - 8185:80
+    environment:
+    # Set DARK_MODE to true to enable dark mode
+      DARK_MODE: true
+
+      # Substitute comma separated qemu connect strings, e.g.:
+      # HOSTS: "['qemu+ssh://user@host1/system', 'qemu+ssh://user@host2/system']"
+      HOSTS: "['qemu+ssh://admin@1.2.3.4/system', 'qemu+ssh://admin@4.5.6.7']"
+    volumes:
+      - /home/gordon/.ssh/id_rsa:/root/.ssh/id_rsa:ro
+      # If not using password auth, substitute location of ssh private key, e.g.:
+      # - /home/user/.ssh/id_rsa:/root/.ssh/id_rsa:ro
